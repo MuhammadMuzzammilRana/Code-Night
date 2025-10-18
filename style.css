@@ -101,156 +101,164 @@
 }
 /* Responsive CSS */
 
-/* Make nav-top icons stack on small screens */
-@media (max-width: 991px) {
-  .nav-top .text-nav-1 {
-    flex-direction: column !important;
-    gap: 0.5rem !important;
-  }
-}
-
-/* Hide some nav links and show menu button on smaller screens */
-@media (max-width: 991px) {
-  .links ul {
+/* Tablets and below */
+@media (max-width: 992px) {
+  /* Show phone/email icons only */
+  .nav-top .text-nav-1 span.d-lg-inline {
     display: none !important;
   }
-  .links button {
+
+  /* Navbar links: hide desktop menu, show mobile menu button */
+  .links ul.d-lg-flex {
+    display: none !important;
+  }
+  .links button.d-lg-none {
     display: block !important;
   }
-}
 
-/* Nav bottom flex direction on small */
-@media (max-width: 575px) {
+  /* Adjust nav-bottom spacing */
   .nav-bottom {
-    flex-direction: column;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center !important;
   }
-  .logo img {
-    width: 120px !important;
-    height: auto !important;
-  }
-}
 
-/* Header text scaling and padding */
-@media (max-width: 767px) {
+  /* Header overlay font sizes */
   .header .overlay h4 {
     font-size: 16px !important;
   }
   .header .overlay h1 {
-    font-size: 36px !important;
+    font-size: 40px !important;
   }
-  .header .btn-1 {
+  .header .overlay .btn-1 {
     min-width: 140px !important;
     height: 40px !important;
     font-size: 14px !important;
   }
-}
 
-/* Section 1 stacking */
-@media (max-width: 991px) {
+  /* Section 1 stack vertically */
   .sec1 {
     flex-direction: column !important;
-    align-items: center !important;
-    gap: 2rem;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
   }
-  .sec1 .div {
+  .sec1 > div:first-child {
+    text-align: center;
+  }
+  .sec1 .div.d-flex {
     flex-direction: row !important;
+    justify-content: center;
+    gap: 15px;
   }
-  .sec1 .div > div {
-    flex: 1 1 45% !important;
+  .sec1 .div.d-flex > div {
+    width: 45% !important;
   }
-}
 
-/* Section 3 icons wrapping */
-@media (max-width: 575px) {
+  /* Section 3 icons smaller and wrapping
   .sec3 {
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 20px !important;
   }
   .sec3 .section {
-    flex: 0 0 48%;
-  }
-}
+    flex: 1 1 45%;
+  } */
 
-/* Section 4 stacking */
-@media (max-width: 991px) {
+  /* Section 4 stack vertically */
   .sec4 {
     flex-direction: column !important;
-    align-items: center !important;
+    text-align: center;
+    gap: 20px;
   }
   .sec4 .div2 {
     padding-left: 0 !important;
-    text-align: center !important;
+    width: 100% !important;
   }
-}
+  .sec4 .div1 {
+    padding-left: 0 !important;
+    width: 100% !important;
+  }
+  .sec4 .btn-2 {
+    display: none;
+  }
 
-/* Section 5 stack image and text */
-@media (max-width: 991px) {
+  /* Section 5 stack vertically */
   .sec5 {
     flex-direction: column !important;
-    align-items: center !important;
-    gap: 2rem;
+    align-items: center;
+    gap: 20px;
   }
   .sec5 .img {
     width: 100% !important;
+    max-width: 440px;
     height: auto !important;
   }
-}
+  .sec5 .text{
+    font-size: 16px !important;
+  }
 
-/* Section 6 images stack on smaller screens */
-@media (max-width: 991px) {
-  .sec6 {
-    flex-direction: column !important;
-    gap: 1rem !important;
-  }
-  .sec6 .imgs {
-    width: 100% !important;
-    height: 200px !important;
-  }
+  /* Section 6 stack images vertically */
   .sec6 .texts1 {
-    margin-top: 50% !important;
-    font-size: 18px !important;
+display: none !important;
   }
-}
 
-/* Section 7 cards stack vertically */
-@media (max-width: 991px) {
+  /* Section 7 cards stack vertically */
   .sec7 .cards {
     flex-direction: column !important;
-    gap: 1.5rem;
-    align-items: center;
+    gap: 30px;
+    padding: 0 15px;
   }
   .sec7 .card1 {
     width: 100% !important;
-    max-width: 350px !important;
+    max-width: 350px;
+    margin: 0 auto;
   }
-}
 
-/* Footer layout adjustment */
-@media (max-width: 991px) {
+  /* Footer stack content vertically */
   .footer > div.d-flex {
     flex-direction: column !important;
-    gap: 2rem;
+    gap: 30px;
     align-items: center;
   }
-  .footer .logo,
-  .footer .text2,
-  .footer .text3 {
+  .footer .text2, .footer .text3 {
     text-align: center;
   }
-  .footer .text3 ul {
-    align-items: center;
+  .footer hr {
+    margin: 20px 0 !important;
   }
 }
 
-/* Small devices font resizing */
-@media (max-width: 575px) {
-  body {
+/* Mobile Phones (small screens) */
+@media (max-width: 576px) {
+  /* Reduce padding and font sizes in header */
+  .header .overlay h1 {
+    font-size: 28px !important;
+  }
+  .header .overlay h4 {
     font-size: 14px !important;
   }
-  .sec1 h2,
-  .sec5 h2,
-  .sec7 h2 {
-    font-size: 24px !important;
+  .header .overlay .btn-1 {
+    min-width: 120px !important;
+    height: 36px !important;
+    font-size: 12px !important;
+  }
+
+  /* Shrink icons in section 3 */
+  .sec3 .section img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .sec3 .section p {
+    font-size: 14px !important;
+  }
+
+  /* Footer smaller text */
+  .footer p, .footer h4 {
+    font-size: 14px !important;
+  }
+}
+@media (max-width: 1058px) {
+  .hovering-link{
+    font-size: 10px;
   }
 }
